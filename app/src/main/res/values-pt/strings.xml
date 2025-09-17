@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SegundaApp_2</string>
+    <string name="numUm">Numero 1</string>
+    <string name="numDois">Numero 2</string>
+    <string name="Soma">Soma</string>
+</resources>
