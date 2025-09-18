@@ -36,22 +36,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickSoma(View view) {
 
-        //verificar se os campos estao preenchidos
         if (txtNumero1.getText().toString().isEmpty() || txtNumero2.getText().toString().isEmpty()) {
             Toast.makeText(this, R.string.preencherCampos, Toast.LENGTH_LONG).show();
             return;
-        }
-        else {
-            //converter os valores para double
+        } else {
             double numero1 = Double.parseDouble(txtNumero1.getText().toString());
             double numero2 = Double.parseDouble(txtNumero2.getText().toString());
 
-            //calcular a soma
             double soma = numero1 + numero2;
 
-            //mostrar o resultado
             resultado = findViewById(R.id.textViewResultado);
-            resultado.setText(getString(R.string.txtResultado) + ": " + soma);
+            java.text.DecimalFormat df = new java.text.DecimalFormat("0.####");
+            resultado.setText(getString(R.string.txtResultado) + ": " + df.format(soma));
+
 
         }
 
