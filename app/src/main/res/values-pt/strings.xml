@@ -4,4 +4,6 @@
     <string name="numUm">Número 1</string>
     <string name="numDois">Número 2</string>
     <string name="Soma">Soma</string>
+    <string name="txtResultado">Resultado</string>
+    <string name="preencherCampos">Preencha ambos os campos!</string>
 </resources>

@@ -3,5 +3,6 @@
     <string name="numUm">Number 1</string>
     <string name="numDois">Number 2</string>
     <string name="Soma">Sum</string>
-    <string name="txtResultado" />
+    <string name="txtResultado" >Result</string>
+    <string name="preencherCampos">Please insert number in both fields!</string>
 </resources>

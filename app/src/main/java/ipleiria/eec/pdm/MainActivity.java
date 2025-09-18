@@ -3,6 +3,7 @@ package ipleiria.eec.pdm;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText txtNumero1;
     private EditText txtNumero2;
+    private TextView resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,29 +30,30 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        txtNumero1 = findViewById(R.id.textViewNum1);
-        txtNumero2 = findViewById(R.id.textViewNum2);
+        txtNumero1 = findViewById(R.id.editTextNumeroUm);
+        txtNumero2 = findViewById(R.id.editTextNumeroDois);
     }
 
     public void onClickSoma(View view) {
 
-        if (txtNumero1.getText().toString().trim().isEmpty() || txtNumero2.getText().toString().trim().isEmpty()) {
+        //verificar se os campos estao preenchidos
+        if (txtNumero1.getText().toString().isEmpty() || txtNumero2.getText().toString().isEmpty()) {
+            Toast.makeText(this, R.string.preencherCampos, Toast.LENGTH_LONG).show();
             return;
         }
+        else {
+            //converter os valores para double
+            double numero1 = Double.parseDouble(txtNumero1.getText().toString());
+            double numero2 = Double.parseDouble(txtNumero2.getText().toString());
 
-        /*
-        if (Numero1.getText().toString().trim().equals("") || Numero2.getText().toString().trim().equals("")) {
-            return;
+            //calcular a soma
+            double soma = numero1 + numero2;
+
+            //mostrar o resultado
+            resultado = findViewById(R.id.textViewResultado);
+            resultado.setText(getString(R.string.txtResultado) + ": " + soma);
+
         }
-        int numero1 = Integer.parseInt(Numero1.getText().toString());
-        int numero2 = Integer.parseInt(Numero2.getText().toString());
-        int soma = numero1 + numero2;
-        String resultado = getResources().getString(R.string.txtResultado) + " " + soma;
-        Numero1.setText("");
-        Numero2.setText("");
-        Numero1.requestFocus();
-        Toast.makeText(this, resultado, Toast.LENGTH_LONG).show();
-        */
 
     }
 }
